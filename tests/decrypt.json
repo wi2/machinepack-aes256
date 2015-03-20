@@ -1,0 +1,20 @@
+{
+  "machine": "decrypt",
+  "expectations": [
+    {
+      "using": {
+        "value": "xI02G5hG79YSQOzgR91UFOJf7VxBcQIgp6zPQQnjNmE=",
+        "secret": "this is a secret"
+      },
+      "outcome": "success"
+    },
+    {
+      "using": {
+        "value": "this is a content",
+        "secret": "this is a secret",
+        "buffer": true
+      },
+      "outcome": "error"
+    }
+  ]
+}

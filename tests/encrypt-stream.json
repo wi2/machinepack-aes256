@@ -1,0 +1,20 @@
+{
+  "machine": "encrypt-stream",
+  "expectations": [
+    {
+      "todo": true,
+      "using": {
+        "stream": "",
+        "secret": ""
+      },
+      "outcome": "success"
+    },
+    {
+      "using": {
+        "stream": "",
+        "secret": ""
+      },
+      "outcome": "error"
+    }
+  ]
+}

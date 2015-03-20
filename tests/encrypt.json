@@ -1,0 +1,20 @@
+{
+  "machine": "encrypt",
+  "expectations": [
+    {
+      "using": {
+        "value": "just a little text",
+        "secret": "this is a secret"
+      },
+      "outcome": "success"
+    },
+    {
+      "using": {
+        "value": "this is a content",
+        "secret": "this is a secret",
+        "buffer": true
+      },
+      "outcome": "error"
+    }
+  ]
+}

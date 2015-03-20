@@ -1,0 +1,34 @@
+{
+  "name": "machinepack-aes256",
+  "version": "0.1.0",
+  "description": "AES-256 Encrypt and decrypt content with crypto API (AES-256)",
+  "scripts": {
+    "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
+  },
+  "keywords": [
+    "AES-256",
+    "Encrypt Decrypt",
+    "machines",
+    "machinepack"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "isbuffer": "0.0.0",
+    "isstream": "^0.1.2",
+    "machine": "^3.0.0"
+  },
+  "devDependencies": {
+    "test-machinepack-mocha": "^0.2.2"
+  },
+  "machinepack": {
+    "friendlyName": "AES-256",
+    "machineDir": "machines/",
+    "machines": [
+      "encrypt",
+      "decrypt",
+      "encrypt-stream",
+      "decrypt-stream"
+    ]
+  }
+}
