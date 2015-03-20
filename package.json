@@ -1,7 +1,7 @@
 {
   "name": "machinepack-aes256",
   "version": "0.1.0",
-  "description": "AES-256 Encrypt and decrypt content with crypto API (AES-256)",
+  "description": "AES-256 Encrypt and decrypt content with node JS crypto API (AES-256)",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
   },
