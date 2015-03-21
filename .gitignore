@@ -30,3 +30,5 @@ coverage
 # Other
 ############################
 .node_history
+samples/test2.md.gz
+samples/test.md

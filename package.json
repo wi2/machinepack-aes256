@@ -28,7 +28,9 @@
       "encrypt",
       "decrypt",
       "encrypt-stream",
-      "decrypt-stream"
+      "decrypt-stream",
+      "encrypt-stream-file",
+      "decrypt-stream-file"
     ]
   }
 }
