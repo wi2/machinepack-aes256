@@ -32,5 +32,9 @@
       "encrypt-stream-file",
       "decrypt-stream-file"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wi2/machinepack-aes256.git"
   }
 }
