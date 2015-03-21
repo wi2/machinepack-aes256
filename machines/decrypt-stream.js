@@ -1,3 +1,5 @@
+
+
 module.exports = {
 
   friendlyName: 'Decrypt stream',
@@ -21,7 +23,13 @@ module.exports = {
 
   exits: {
     error: {
-      description: 'An unexpected error occurred.'
+      description: 'Unexpected error occurred.',
+    },
+    errorNotStream: {
+      description: "It's not a valid stream"
+    },
+    errorUnzip: {
+      description: "Can not a unzip the stream"
     },
     success: {
       example:  {
@@ -31,16 +39,21 @@ module.exports = {
   },
 
   fn: function (inputs,exits) {
-    if (require('isstream')(inputs.stream) !== true)
-      return exits.error({error: "It's not a valid stream"});
+    var helper = require("../lib/helper.js");
 
-    var algorithm = "aes-256-ctr";
-    var decipher = require('crypto').createDecipher(algorithm, inputs.secret)
+    if (helper.isStream(inputs.stream) !== true)
+      return exits.errorNotStream({error: "It's not a valid stream"});
+
+    var stream = helper.decryptStream(inputs.stream, inputs.secret, exits.errorUnzip);
+
+    if (inputs.save){
+      stream.pipe(fs.createWriteStream(inputs.path+".gz"));
+    }
+
     // Return an a crypted stream
     return exits.success({
-      stream: inputs.stream.pipe(decipher).pipe(require('zlib').createGunzip())
+      stream: stream
     });
-
   },
 
 };

@@ -21,7 +21,10 @@ module.exports = {
 
   exits: {
     error: {
-      description: 'An unexpected error occurred.'
+      description: 'Unexpected error occurred.',
+    },
+    errorNotStream: {
+      description: "It's not a valid stream"
     },
     success: {
       example:  {
@@ -31,14 +34,14 @@ module.exports = {
   },
 
   fn: function (inputs,exits) {
-    if (require('isstream')(inputs.stream) !== true)
-      return exits.error({error: "It's not a valid stream"});
+    var helper = require("../lib/helper.js");
 
-    var algorithm = "aes-256-ctr";
-    var cipher = require('crypto').createCipher(algorithm, inputs.secret)
+    if (helper.isStream(inputs.stream) !== true)
+      return exits.errorNotStream({error: "It's not a valid stream"});
+
     // Return an a crypted stream
     return exits.success({
-      stream: inputs.stream.pipe(require('zlib').createGzip()).pipe(cipher)
+      stream: helper.encryptStream(inputs.stream, inputs.secret)
     });
 
   },

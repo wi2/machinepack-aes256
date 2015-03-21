@@ -2,19 +2,18 @@
   "machine": "decrypt-stream",
   "expectations": [
     {
-      "todo": true,
       "using": {
-        "stream": "",
-        "secret": ""
+        "stream": "a stream",
+        "secret": "secret"
       },
-      "outcome": "success"
+      "outcome": "errorNotStream"
     },
     {
       "using": {
         "stream": "",
         "secret": ""
       },
-      "outcome": "error"
+      "outcome": "errorNotStream"
     }
   ]
 }
