@@ -39,8 +39,7 @@ module.exports = {
   fn: function (inputs,exits) {
     var helper = require("../lib/helper.js");
     var fs = require("fs");
-
-    if (fs.existsSync(inputs.path) !== true)
+    if (require('exists-sync')(inputs.path) !== true)
       return exits.errorFileNotFind();
 
     var stream = helper.encryptStream(fs.createReadStream(inputs.path), inputs.secret);
