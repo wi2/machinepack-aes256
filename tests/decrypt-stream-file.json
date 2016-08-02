@@ -3,14 +3,14 @@
   "expectations": [
     {
       "using": {
-        "path": "../../samples/test.md.gz",
+        "path": "./samples/test.md.gz",
         "secret": "secret"
       },
       "outcome": "success"
     },
     {
       "using": {
-        "path": "../../samples/test.md.gz",
+        "path": "./samples/test.md.gz",
         "save": true,
         "secret": "secret"
       },
