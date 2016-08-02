@@ -1,6 +1,6 @@
 {
   "name": "machinepack-aes256",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "AES-256 Encrypt and decrypt content with node JS crypto API (AES-256)",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
@@ -17,7 +17,7 @@
     "exists-sync": "0.0.3",
     "isbuffer": "0.0.0",
     "isstream": "^0.1.2",
-    "machine": "^12.2.5"
+    "machine": "^13.0.0-0"
   },
   "devDependencies": {
     "test-machinepack-mocha": "^2.1.5"
